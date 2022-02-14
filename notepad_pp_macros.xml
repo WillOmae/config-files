@@ -1,0 +1,64 @@
+<Macro name="JKAG Welfare" Ctrl="no" Alt="no" Shift="no" Key="0">
+    <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+    <Action type="3" message="1601" wParam="0" lParam="0" sParam=" Confirmed.You have received Ksh" />
+    <Action type="3" message="1625" wParam="0" lParam="1" sParam="" />
+    <Action type="3" message="1602" wParam="0" lParam="0" sParam="\t" />
+    <Action type="3" message="1702" wParam="0" lParam="768" sParam="" />
+    <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+
+    <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+    <Action type="3" message="1601" wParam="0" lParam="0" sParam=" from " />
+    <Action type="3" message="1625" wParam="0" lParam="1" sParam="" />
+    <Action type="3" message="1602" wParam="0" lParam="0" sParam="\t" />
+    <Action type="3" message="1702" wParam="0" lParam="768" sParam="" />
+    <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+    <!-- Trim extraneous info at end of line -->
+    <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+    <Action type="3" message="1601" wParam="0" lParam="0" sParam=" on .*" />
+    <Action type="3" message="1625" wParam="0" lParam="2" sParam="" />
+    <Action type="3" message="1602" wParam="0" lParam="0" sParam="" />
+    <Action type="3" message="1702" wParam="0" lParam="768" sParam="" />
+    <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+    <!-- Extract MSISDN -->
+    <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+    <Action type="3" message="1601" wParam="0" lParam="0" sParam=" ([0-9]{10})" />
+    <Action type="3" message="1625" wParam="0" lParam="2" sParam="" />
+    <Action type="3" message="1602" wParam="0" lParam="0" sParam="\t\1" />
+    <Action type="3" message="1702" wParam="0" lParam="768" sParam="" />
+    <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+    <!-- Remove other transactions -->
+    <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+    <Action type="3" message="1601" wParam="0" lParam="0" sParam="(.*[Ww]ithdraw .*\r\n)|(.* sent to .*\r\n)|(.* paid to.*\r\n)|(.*transfered.*\r\n)|(.*transferred.*\r\n)" />
+    <Action type="3" message="1625" wParam="0" lParam="2" sParam="" />
+    <Action type="3" message="1602" wParam="0" lParam="0" sParam="" />
+    <Action type="3" message="1702" wParam="0" lParam="768" sParam="" />
+    <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+    <!-- Remove timestamps [1] -->
+    <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+    <Action type="3" message="1601" wParam="0" lParam="0" sParam="(^\s*[0-9]{2}:[0-9]{2}\s*)" />
+    <Action type="3" message="1625" wParam="0" lParam="2" sParam="" />
+    <Action type="3" message="1602" wParam="0" lParam="0" sParam="" />
+    <Action type="3" message="1702" wParam="0" lParam="768" sParam="" />
+    <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+    <!-- Remove timestamps [2] -->
+    <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+    <Action type="3" message="1601" wParam="0" lParam="0" sParam="(^\s*[A-Za-z]*\s*·\s*[0-9]{2}:[0-9]{2}\s*)" />
+    <Action type="3" message="1625" wParam="0" lParam="2" sParam="" />
+    <Action type="3" message="1602" wParam="0" lParam="0" sParam="" />
+    <Action type="3" message="1702" wParam="0" lParam="768" sParam="" />
+    <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+    <!-- Rearrange entries to match excel table -->
+    <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+    <Action type="3" message="1601" wParam="0" lParam="0" sParam="([A-Z0-9]{10})\t([0-9]+\.*[0-9]*)\t*(.*)\t(.*)" />
+    <Action type="3" message="1625" wParam="0" lParam="2" sParam="" />
+    <Action type="3" message="1602" wParam="0" lParam="0" sParam="\3\t\4\t\1\t\t\2" />
+    <Action type="3" message="1702" wParam="0" lParam="768" sParam="" />
+    <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+    <!-- Replace double spaces with single spaces -->
+    <Action type="3" message="1700" wParam="0" lParam="0" sParam="" />
+    <Action type="3" message="1601" wParam="0" lParam="0" sParam="  " />
+    <Action type="3" message="1625" wParam="0" lParam="0" sParam="" />
+    <Action type="3" message="1602" wParam="0" lParam="0" sParam=" " />
+    <Action type="3" message="1702" wParam="0" lParam="768" sParam="" />
+    <Action type="3" message="1701" wParam="0" lParam="1609" sParam="" />
+</Macro>
